@@ -10,7 +10,7 @@ public class IsTriangular {
         double b = sc.nextDouble();
         System.out.print("Hãy điền vào độ dài cạnh c: ");
         double c = sc.nextDouble();
-        if((a <=0 || b <=0 || c<=0) || (a+b <= c || c + a <= b || b+ c <= a)) {
+        if(a <=0 || b <=0 || c<=0 || a+b <= c || c + a <= b || b+ c <= a) {
             System.out.println("Đây không phải là 3 cạnh của 1 tam giác");
         } else {
             System.out.println("Đây là 3 cạnh của 1 tam giác");
