@@ -18,16 +18,13 @@ public class App {
         // nhưng đến khi i=2 ; j=1 => lại bị đổi vị trí
         int swap;
         for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if(i > j) {
-                    j = i;
-                }
+            for (int j = i; j < 5; j++) {
                 swap = arr[i][j];
                 arr[i][j] = arr[j][i];
                 arr[j][i] = swap;
             }
         }
-        System.out.println("--------------");
+        System.out.println("-----------------------------------------");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 System.out.print(arr[i][j] + "\t");
