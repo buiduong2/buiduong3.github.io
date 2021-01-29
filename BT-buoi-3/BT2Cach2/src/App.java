@@ -16,18 +16,12 @@ public class App {
         // đấy arr[i][j] lại chạy đến arr[i][j] với i và j đảo 2 lần)
         //VD  Khi i = 1 ; j =2; =>arr[1][2]  đổi vị trí  arr[2][1].
         // nhưng đến khi i=2 ; j=1 => lại bị đổi vị trí
-        int count = -1;
         int swap;
         for (int i = 0; i < 5; i++) {
-            count++;
-            if (count > i) {
-                continue;
-            }
             for (int j = 0; j < 5; j++) {
-                while (count > j) {
-                    j++;
+                if(i > j) {
+                    j = i;
                 }
-                System.out.println(j);
                 swap = arr[i][j];
                 arr[i][j] = arr[j][i];
                 arr[j][i] = swap;
