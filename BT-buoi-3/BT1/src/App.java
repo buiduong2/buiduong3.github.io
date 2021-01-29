@@ -7,7 +7,7 @@ public class App {
         int n = sc.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            System.out.print("Điền vào phần tử thứ " + i + " : ");
+            System.out.printf("Hãy điền giá trị của arr[%d]: ", i);
             arr[i] = sc.nextInt();
         }
         System.out.println("In mảng");
