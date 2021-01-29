@@ -10,10 +10,10 @@ public class Fibonacci {
         System.out.println("Nhập vào 1 số nguyên Dương bất kỳ");
         int n = sc.nextInt();
         int number = 1;
-        int previousNumber = 1;
-        if (n <= 0) {
+        int previousNumber = 0;
+        if (n < 0) {
             System.out.println("Giá trị nhập vào không chính xác");
-        } else if (n >= 2) {
+        } else if (n >0) {
             System.out.println("Dãy số cần tìm là: ");
             System.out.print(previousNumber + ", " + number);
             for (int i = 1; i <= n; i++) {
@@ -25,10 +25,7 @@ public class Fibonacci {
             }
             System.out.println();
         } else {
-            System.out.println("Dãy số cần tìm là: 1");
-            // Em nghĩ mãi ko ra cách làm thế nào để chỉ điền 1 số 1 nếu n =1; nên giải
-            // quyết theo hướng này. nếu n !=1 thì câu lệnh mãi mãi ko bao giờ chạy tới. Có
-            // vẻ tối ưu :D
+            System.out.println("Dãy số cần tìm là: 0");
         }
         sc.close();
     }
