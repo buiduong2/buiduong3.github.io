@@ -27,13 +27,17 @@ public class App {
         int max2 = (arr[0] == max1) ? arr[1] : arr[0];
         int location2 = (0 == location1) ? 1 : 0;
         for (int i = 0; i < n; i++) {
-            if (max2 < arr[i] && arr[i] != max1) {
+            if (max2 < arr[i] && i != location1) {
                 max2 = arr[i];
                 location2 = i;
             }
         }
-        System.out.println("Giá trị lớn nhất: " + max1 + " -vị trí i: " + location1);
-        System.out.println("Giá trị lớn nhì: " + max2 + " -vị trí i: " + location2);
+        if(max1 == max2) {
+            System.out.printf("Giá trị lớn nhất và nhỏ nhất đều bằng %d\nVị trí là arr[%d] và arr[%d]\n",max1,location1,location2);
+        } else {
+            System.out.println("Giá trị lớn nhất: " + max1 + " -vị trí arr[" + location1 +"]");
+            System.out.println("Giá trị lớn nhì: " + max2 + " -vị trí arr[" + location2+"]");
+        }
         // Sắp xếp mảng
         System.out.println();
         System.out.println("Sắp xếp mảng theo thứ tự giảm dần");
