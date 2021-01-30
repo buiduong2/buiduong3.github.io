@@ -27,17 +27,27 @@ public class MutilDimensionalArray {
         }
         sc.close();
         // in mảng
-        for (int k = 0; k < z; k++) {
-            if (z > 1) {
-                System.out.println("mảng con thứ " + k );
-            }
+        if (z == 1) {
+            // Có thể dùng phần code của else để in ra mảng 2 chiều luôn.
+            // mảng 2 chiều sau khi khởi tạo là twoDimensionalArray
+            int[][] twoDimensionalArray = arr[0];
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < col; j++) {
-                    System.out.print(arr[k][i][j] + "\t");
+                    System.out.print(twoDimensionalArray[i][j] + "\t");
                 }
                 System.out.println();
             }
-            System.out.println();
+        } else {
+            for (int k = 0; k < z; k++) {
+                System.out.println("mảng con thứ " + k);
+                for (int i = 0; i < row; i++) {
+                    for (int j = 0; j < col; j++) {
+                        System.out.print(arr[k][i][j] + "\t");
+                    }
+                    System.out.println();
+                }
+                System.out.println();
+            }
         }
         int sum = 0;
         // tính tổng % 5==0;
