@@ -14,43 +14,30 @@ public class MutilDimensionalArray {
             System.out.print("Hãy điền số lớp z của mảng: ");
             z = sc.nextInt();
         } else {
-            System.out.println("Khởi tạo mảng 2 chiều ");
+            System.out.println("\nKhởi tạo mảng 2 chiều ");
         }
         int[][][] arr = new int[z][row][col];
         for (int k = 0; k < z; k++) {
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < col; j++) {
-                    System.out.printf("Hãy điền giá trị của arr1[%d][%d][%d]: ", k, i, j);
+                    System.out.printf("Hãy điền giá trị của arr[%d][%d][%d]: ", k, i, j);
                     arr[k][i][j] = sc.nextInt();
                 }
             }
         }
         sc.close();
+
         // in mảng
+        System.out.println("\n\nIn mảng thu được: ");
         if (z == 1) {
-            // Có thể dùng phần code của else để in ra mảng 2 chiều luôn.
-            // mảng 2 chiều sau khi khởi tạo là twoDimensionalArray
             int[][] twoDimensionalArray = arr[0];
-            for (int i = 0; i < row; i++) {
-                for (int j = 0; j < col; j++) {
-                    System.out.print(twoDimensionalArray[i][j] + "\t");
-                }
-                System.out.println();
-            }
+            displayTwoDimensinalArray(twoDimensionalArray, row, col);
         } else {
-            for (int k = 0; k < z; k++) {
-                System.out.println("mảng con thứ " + k);
-                for (int i = 0; i < row; i++) {
-                    for (int j = 0; j < col; j++) {
-                        System.out.print(arr[k][i][j] + "\t");
-                    }
-                    System.out.println();
-                }
-                System.out.println();
-            }
+            displayThreeDimensinalArray(arr, z, row, col);
         }
-        int sum = 0;
+
         // tính tổng % 5==0;
+        int sum = 0;
         for (int k = 0; k < z; k++) {
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < col; j++) {
@@ -60,9 +47,24 @@ public class MutilDimensionalArray {
                 }
             }
         }
-        System.out.println("Tổng các phần tử chia hết cho 5 là : " + sum);
-        // Cái này em thấy có thể gộp vào với thằng vòng lặp in mảng nhưng nghe đâu đấy
-        // là ko nên làm thế ạ để nó tối ưu;
+        System.out.println("\n\nTổng các phần tử chia hết cho 5 là : " + sum);
+    }
 
+    // Phương thức xuất mảng 2 chiều
+    public static void displayTwoDimensinalArray(int[][] arr, int row, int col) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    // phương thức xuất mảng 3 chiều
+    public static void displayThreeDimensinalArray(int[][][] arr, int z, int row, int col) {
+        for (int k = 0; k < z; k++) {
+            System.out.println();
+            displayTwoDimensinalArray(arr[k], row, col);
+        }
     }
 }

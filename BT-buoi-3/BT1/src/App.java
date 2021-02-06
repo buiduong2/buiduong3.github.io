@@ -9,55 +9,73 @@ public class App {
         for (int i = 0; i < n; i++) {
             System.out.printf("Hãy điền giá trị của arr[%d]: ", i);
             arr[i] = sc.nextInt();
-        }
-        System.out.println("In mảng");
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + "\t");
-        }
-        System.out.println();
-        // tìm max1 và max 2;
-        int max1 = arr[0];
-        int location1 = 0;
-        for (int i = 0; i < n; i++) {
-            if (max1 < arr[i]) {
-                max1 = arr[i];
-                location1 = i;
+            if (arr[i] < 0) {
+                System.out.println("Dữ liệu nhập vào không chính xác");
+                System.exit(0);
             }
         }
-        int max2 = (arr[0] == max1) ? arr[1] : arr[0];
-        int location2 = (0 == location1) ? 1 : 0;
-        for (int i = 0; i < n; i++) {
-            if (max2 < arr[i] && i != location1) {
-                max2 = arr[i];
-                location2 = i;
-            }
-        }
-        if(max1 == max2) {
-            System.out.printf("Giá trị lớn nhất và nhỏ nhất đều bằng %d\nVị trí là arr[%d] và arr[%d]\n",max1,location1,location2);
-        } else {
-            System.out.println("Giá trị lớn nhất: " + max1 + " -vị trí arr[" + location1 +"]");
-            System.out.println("Giá trị lớn nhì: " + max2 + " -vị trí arr[" + location2+"]");
-        }
-        // Sắp xếp mảng
-        System.out.println();
-        System.out.println("Sắp xếp mảng theo thứ tự giảm dần");
-        int swarp;
         sc.close();
+
+        System.out.println("\nIn mảng");
+        displayArray(arr, n);
+
+        // tìm max1 và max 2;
+        // max1
+        int maxIndex1 = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[maxIndex1] < arr[i]) {
+                maxIndex1 = i;
+            }
+        }
+
+        System.out.println("\n\nVị trí phần tử lớn nhất là: ");
+        getIndex(arr, n, arr[maxIndex1]);
+
+        // max 2
+        int max2 = -1;
+        for (int i = 0; i < n; i++) {
+            if (max2 < arr[i] && arr[i] != arr[maxIndex1]) {
+                max2 = arr[i];
+            }
+        }
+        if (max2 == -1) {
+            System.out.println("\n\nKhông tồn tại phần tử lớn thứ 2");
+        } else {
+            System.out.println("\n\nVị trí phần tử lớn thứ 2 là: ");
+            getIndex(arr, n, max2);
+        }
+
+        // Sắp xếp mảng
+        int temp;
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (arr[i] < arr[j]) {
-                    swarp = arr[i];
+                    temp = arr[i];
                     arr[i] = arr[j];
-                    arr[j] = swarp;
+                    arr[j] = temp;
                 }
             }
         }
+
+        System.out.println("\n\nSắp xếp mảng theo thứ tự giảm dần");
+        displayArray(arr, n);
+
+    }
+
+    // Xuất mảng
+    public static void displayArray(int[] arr, int n) {
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + "\t");
         }
-        // Sau khi sắp xếp
-        // Phần tử lớn nhất là arr[0] ; i=0;
-        // phẩn tử lớn thứ 2 là arr[1] ; i=1;
-        System.out.println();
+    }
+
+    // Tìm vị trí lớn nhất + lớn nhì
+    public static void getIndex(int[] arr, int n, int max) {
+        System.out.println("-Giá trị: " + max);
+        for (int i = 0; i < n; i++) {
+            if (max == arr[i]) {
+                System.out.println("-Vị trí có giá trị tương ứng: " + i);
+            }
+        }
     }
 }

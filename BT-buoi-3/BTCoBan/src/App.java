@@ -42,54 +42,56 @@ public class App {
         System.out.println("Số lượng số chẵn là: " + evenCount);
         // tìm số nguyên tố
         System.out.println("\n----------------------\n");
-        boolean isNguyenTo;
         for (int i = 0; i < n; i++) {
-            if (arr[i] <= 1) {
-                continue;
-            }
-            isNguyenTo = true;
-            for (int j = 2; j <= Math.sqrt(arr[i]); j++) {
-                if (arr[i] % j == 0) {
-                    isNguyenTo = false;
-                    break;
-                }
-            }
-            if (isNguyenTo) {
+            if (isPrimeNumber(arr[i])) {
                 System.out.printf("\nSố nguyên tố là arr[%d] = %d", i, arr[i]);
             }
         }
         // sắp xếp tăng
-        int swap;
+        int temp;
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j < n; j++) {
-
                 if (arr[i] > arr[j]) {
-                    swap = arr[i];
+                    temp = arr[i];
                     arr[i] = arr[j];
-                    arr[j] = swap;
+                    arr[j] = temp;
                 }
             }
         }
-        // in sắp xếp tăng
         System.out.println("\n----------------------\n");
         System.out.println("In mảng tăng dần");
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + "\t");
-        }
+        displayArray(arr, n);
 
         // sắp xếp giảm
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (arr[i] < arr[j]) {
-                    swap = arr[i];
+                    temp = arr[i];
                     arr[i] = arr[j];
-                    arr[j] = swap;
+                    arr[j] = temp;
                 }
             }
         }
-        // in sắp xếp giảm
         System.out.println("\n----------------------\n");
         System.out.println("In mảng giảm dần");
+        displayArray(arr, n);
+    }
+
+    // Xác định số nguyên
+    public static boolean isPrimeNumber(int num) {
+        if (num < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // in mảng
+    public static void displayArray(int[] arr, int n) {
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + "\t");
         }
