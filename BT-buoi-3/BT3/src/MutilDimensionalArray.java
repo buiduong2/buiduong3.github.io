@@ -31,9 +31,9 @@ public class MutilDimensionalArray {
         System.out.println("\n\nIn mảng thu được: ");
         if (z == 1) {
             int[][] twoDimensionalArray = arr[0];
-            displayTwoDimensinalArray(twoDimensionalArray, row, col);
+            displayArray(twoDimensionalArray, row, col);
         } else {
-            displayThreeDimensinalArray(arr, z, row, col);
+            displayArray(arr, z, row, col);
         }
 
         // tính tổng % 5==0;
@@ -51,7 +51,7 @@ public class MutilDimensionalArray {
     }
 
     // Phương thức xuất mảng 2 chiều
-    public static void displayTwoDimensinalArray(int[][] arr, int row, int col) {
+    public static void displayArray(int[][] arr, int row, int col) {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 System.out.print(arr[i][j] + "\t");
@@ -61,10 +61,10 @@ public class MutilDimensionalArray {
     }
 
     // phương thức xuất mảng 3 chiều
-    public static void displayThreeDimensinalArray(int[][][] arr, int z, int row, int col) {
+    public static void displayArray(int[][][] arr, int z, int row, int col) {
         for (int k = 0; k < z; k++) {
             System.out.println();
-            displayTwoDimensinalArray(arr[k], row, col);
+            displayArray(arr[k], row, col);
         }
     }
 }
