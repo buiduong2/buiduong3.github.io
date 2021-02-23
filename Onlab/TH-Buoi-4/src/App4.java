@@ -28,11 +28,16 @@ public class App4 {
         xuatMang(n, arr);
 
         // Sửa phần tử
+        // tạo phương thức Sửa phần tử là ko cần thiết. giết gà ko cần giao mổ trâu;
         System.out.print("\n\nNhập vị trí phần tử muốn sửa: ");
         int k = sc.nextInt();
-        System.out.print("Nhập giá trị sau khi sửa là: ");
+        if (k < 0 || k >= n) {
+            System.out.println("Vi tri khong hop le");
+            System.exit(0);
+        }
+        System.out.println("Nhap phan tu: ");
         x = sc.nextInt();
-        suaPhanTu(arr, n, k, x);
+        arr[k] = x;
         System.out.println("Mảng sau khi sửa là: ");
         xuatMang(n, arr);
 
@@ -66,14 +71,6 @@ public class App4 {
         }
         arr[n] = x;
         return n + 1;
-    }
-
-    static void suaPhanTu(int[] arr, int n, int index, int num) {
-        if (index >= n || index < 0) {
-            System.out.println("Nhập vào vị trí ko chính xác Không thể sửa phần tử ");
-            return;
-        }
-        arr[index] = num;
     }
 
     static int insert(int[] arr, int n, int k, int num, int size) {
