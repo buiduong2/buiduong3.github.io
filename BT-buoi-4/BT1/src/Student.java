@@ -1,6 +1,6 @@
 public class Student {
     public int id;
-    public String fullName;
+    public String name;
     public float theoreticalPoint;
     public float practicePoint;
 
@@ -8,9 +8,9 @@ public class Student {
 
     }
 
-    public Student(int id, String fullName, float theoreticalPoint, float practicePoint) {
+    public Student(int id, String name, float theoreticalPoint, float practicePoint) {
         this.id = id;
-        this.fullName = fullName;
+        this.name = name;
         this.theoreticalPoint = theoreticalPoint;
         this.practicePoint = practicePoint;
     }
@@ -26,7 +26,7 @@ public class Student {
 
     public void display() {
         System.out.println("Id: " + id);
-        System.out.println("Name: " + fullName);
+        System.out.println("Name: " + name);
         System.out.println("Theoretical point: " + theoreticalPoint);
         System.out.println("Practice point: " + practicePoint);
         System.out.println("Gpa: " + getGpa());
