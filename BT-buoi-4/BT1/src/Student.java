@@ -25,10 +25,6 @@ public class Student {
     }
 
     public void display() {
-        System.out.println("Id: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Theoretical point: " + theoreticalPoint);
-        System.out.println("Practice point: " + practicePoint);
-        System.out.println("Gpa: " + getGpa());
+        System.out.printf("%3d\t %-15s %8.2f %10.2f %10.2f \n", id, name, theoreticalPoint, practicePoint, getGpa());
     }
 }
