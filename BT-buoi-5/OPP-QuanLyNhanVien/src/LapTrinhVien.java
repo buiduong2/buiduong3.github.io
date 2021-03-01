@@ -28,4 +28,11 @@ public class LapTrinhVien extends NhanVien {
         super.display();
         System.out.printf("%s\t %.2f", overtimeHours, getSalary());
     }
+
+    @Override
+    public void input() {
+        super.input();
+        System.out.print("Nhập vào số giờ overtime của LTV: ");
+        overtimeHours = sc.nextDouble();
+    }
 }

@@ -27,4 +27,11 @@ public class KiemChungVien extends NhanVien {
         super.display();
         System.out.printf("%s\t %.2f", numberOfErrorsDetected, getSalary());
     }
+
+    @Override
+    public void input() {
+        super.input();
+        System.out.print("Nhập vào số lỗi phát hiện của : ");
+        numberOfErrorsDetected = sc.nextInt();
+    }
 }

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class NhanVien {
     private int id;
     private String name;
@@ -5,6 +7,7 @@ public class NhanVien {
     private String phoneNumber;
     private String email;
     private double basicSalary;
+    protected Scanner sc = new Scanner(System.in);
 
     public NhanVien() {
 
@@ -71,4 +74,23 @@ public class NhanVien {
         System.out.printf("\n%d\t %-15s %d\t %s \t%-20s %.2f\t\t", id, name, age, phoneNumber, email, basicSalary);
     }
 
+    public void input() {
+        System.out.print("Nhập mã nhân viên: ");
+        id = Integer.valueOf(sc.nextLine());
+
+        System.out.print("Nhập họ tên : ");
+        name = sc.nextLine();
+
+        System.out.print("Nhập vào tuổi : ");
+        age = sc.nextInt();
+
+        System.out.print("Nhập vào số điện thoại : ");
+        phoneNumber = sc.next();
+
+        System.out.print("Nhập vào email : ");
+        email = sc.next();
+
+        System.out.print("Nhập vào lương cơ bản : ");
+        basicSalary = sc.nextDouble();
+    }
 }
