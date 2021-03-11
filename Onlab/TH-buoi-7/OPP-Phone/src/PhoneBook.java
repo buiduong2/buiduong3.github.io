@@ -61,7 +61,7 @@ public class PhoneBook extends Phone {
     }
 
     static int deleteNumber(PhoneBook[] phones, int n, int index) {
-        if (n == 0) {
+        if (n < 0 || n > 20) {
             return n;
         }
         for (int i = index + 1; i < n; i++) {
