@@ -1,3 +1,3 @@
 public interface IRectangle {
-    double getdiagonal();
+    double getDiagonal();
 }

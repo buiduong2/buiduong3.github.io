@@ -38,12 +38,12 @@ public class Rectangle extends Geometry implements IRectangle {
     }
 
     @Override
-    public double getdiagonal() {
+    public double getDiagonal() {
         return Math.sqrt(width * width + length * length);
     }
 
     @Override
     public void display() {
-        System.out.printf("Chu vi: %.2f\tDiện tích: %.2f\tĐường chéo: %.2f\n", getPremter(), getArea(), getdiagonal());
+        System.out.printf("Chu vi: %.2f\tDiện tích: %.2f\tĐường chéo: %.2f\n", getPremter(), getArea(), getDiagonal());
     }
 }
