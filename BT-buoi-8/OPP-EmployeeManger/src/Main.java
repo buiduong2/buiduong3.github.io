@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -32,6 +34,15 @@ public class Main {
         print(listEmployee);
 
         sc.close();
+
+        File myFile = new File("NhanVien.txt");
+        myFile.createNewFile();
+        System.out.println("\nFile created: " + myFile.getAbsolutePath());
+        FileWriter myWriter = new FileWriter("NhanVien.txt");
+        for (Employee employee : listEmployee) {
+            myWriter.write(employee + "\n");
+        }
+        myWriter.close();
     }
 
     static void print(ArrayList<Employee> listEmployee) {
