@@ -1,0 +1,4 @@
+NV001 | Nhan Vien 1 | Nhan Vien | Ha Noi | 20000.0
+NV002 | Nhan Vien 2 | Nhan Vien | Ho Chi Minh | 25000.0
+NV003 | Giam Doc 1 | Giam Doc | Da Nang | 30000.0
+NV004 | Nhan Vien 4 | Lao Cong | Hai Phong | 35000.0
