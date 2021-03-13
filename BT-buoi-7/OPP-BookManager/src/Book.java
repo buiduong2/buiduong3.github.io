@@ -79,7 +79,6 @@ public class Book {
     }
 
     public String toString() {
-        return "\nId: " + id + "\nName: " + name + "\nPublisher: " + publisher + "\nPublishing year: " + publishingYear
-                + "\nAmount: " + amount;
+        return id + " | " + name + " | " + publisher + " | " + publishingYear + " | " + amount;
     }
 }

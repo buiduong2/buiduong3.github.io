@@ -1,6 +1,6 @@
 public class Project extends Book implements IKho {
     private int numberOfPages;
-    private boolean status;
+    private String status;
     private int yearOfProtection;
 
     public Project() {
@@ -8,7 +8,7 @@ public class Project extends Book implements IKho {
     }
 
     public Project(String id, String name, String publisher, int publishingYear, int amount, int numberOfPages,
-            boolean status, int yearOfProtection) {
+            String status, int yearOfProtection) {
         super(id, name, publisher, publishingYear, amount);
         this.numberOfPages = numberOfPages;
         this.status = status;
@@ -23,11 +23,11 @@ public class Project extends Book implements IKho {
         this.numberOfPages = numberOfPages;
     }
 
-    public boolean isStatus() {
+    public String isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -46,7 +46,7 @@ public class Project extends Book implements IKho {
         numberOfPages = Integer.valueOf(sc.nextLine());
 
         System.out.print("Nhập vào tình trạng: True | False : ");
-        status = Boolean.valueOf(sc.nextLine());
+        status = sc.nextLine();
 
         System.out.print("Nhập vào năm bảo vệ: ");
         yearOfProtection = Integer.valueOf(sc.nextLine());
@@ -54,8 +54,7 @@ public class Project extends Book implements IKho {
 
     @Override
     public String toString() {
-        return super.toString() + "\nNumber of Pages: " + numberOfPages + "\nStatus: " + status
-                + "\nYear of protection: " + yearOfProtection;
+        return super.toString() + " | " + numberOfPages + " | " + status + " | " + yearOfProtection;
     }
 
     @Override

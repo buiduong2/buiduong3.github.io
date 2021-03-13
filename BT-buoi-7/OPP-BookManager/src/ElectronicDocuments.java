@@ -54,7 +54,7 @@ public class ElectronicDocuments extends Book implements IDownload {
 
     @Override
     public String toString() {
-        return super.toString() + "\nCapacity: " + capacity + "\nDownloads: " + downloads + "\nPrice: " + price;
+        return super.toString() + " | " + capacity + " | " + downloads + " | " + price;
     }
 
     @Override

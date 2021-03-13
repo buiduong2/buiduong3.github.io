@@ -1,6 +1,6 @@
 public class TextBook extends Book implements IMuon, IKho {
     private int numberOfPages;
-    private boolean status;
+    private String status;
     private int amountBorrowed;
 
     public TextBook() {
@@ -8,7 +8,7 @@ public class TextBook extends Book implements IMuon, IKho {
     }
 
     public TextBook(String id, String name, String publisher, int publishingYear, int amount, int numberOfPages,
-            boolean status, int amountBorrowed) {
+            String status, int amountBorrowed) {
         super(id, name, publisher, publishingYear, amount);
         this.numberOfPages = numberOfPages;
         this.status = status;
@@ -23,11 +23,11 @@ public class TextBook extends Book implements IMuon, IKho {
         this.numberOfPages = numberOfPages;
     }
 
-    public boolean isStatus() {
+    public String isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -47,7 +47,7 @@ public class TextBook extends Book implements IMuon, IKho {
         numberOfPages = Integer.valueOf(sc.nextLine());
 
         System.out.print("Nhập vào tình trạng: True | False : ");
-        status = Boolean.valueOf(sc.nextLine());
+        status = sc.nextLine();
 
         System.out.print("Nhập vào số lượng mượn: ");
         amountBorrowed = Integer.valueOf(sc.nextLine());
@@ -55,8 +55,7 @@ public class TextBook extends Book implements IMuon, IKho {
 
     @Override
     public String toString() {
-        return super.toString() + "\nNumber of Pages: " + numberOfPages + "\nStatus: " + status + "\nAmount borrowed: "
-                + amountBorrowed;
+        return super.toString() + " | " + numberOfPages + " | " + status + " | " + amountBorrowed;
     }
 
     @Override
