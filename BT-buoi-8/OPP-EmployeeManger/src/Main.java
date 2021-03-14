@@ -14,7 +14,7 @@ public class Main {
             Employee employee = new Employee();
             employee.input();
             listEmployee.add(employee);
-            System.out.print("\nNhập 0 - Sử dụng các chương trình khác | Số bất kỳ để tiếp tục thêm nhân viên : ");
+            System.out.print("\nNhập số bất kỳ để tiếp tục | Nhập 0 để dừng lại : ");
             n = Integer.valueOf(sc.nextLine());
         } while (n != 0);
         print(listEmployee);
@@ -66,43 +66,42 @@ public class Main {
     }
 
     static void delete(ArrayList<Employee> listEmployee) {
-        Employee employee = search(listEmployee);
-        if (employee.getName() == null) {
+        int i = search(listEmployee);
+        if (i == -1) {
             return;
         }
-        listEmployee.remove(employee);
+        listEmployee.remove(listEmployee.get(i));
     }
 
     static void editName(ArrayList<Employee> listEmployee) {
-        Employee employee = search(listEmployee);
-        if (employee.getName() == null) {
+        int i = search(listEmployee);
+        if (i == -1) {
             return;
         }
         System.out.print("Nhập tên mới của nhân viên: ");
-        employee.setName(sc.nextLine());
+        listEmployee.get(i).setName(sc.nextLine());
     }
 
-    static Employee search(ArrayList<Employee> listEmployee) {
+    static int search(ArrayList<Employee> listEmployee) {
         System.out.print("Nhập 1 - tìm NV theo tên | 2 - tìm NV theo ID:  ");
         int n = Integer.valueOf(sc.nextLine());
         System.out.print("Hãy điền từ khoá tương ứng: ");
         String key = sc.nextLine();
         if (n == 1) {
-            for (Employee e : listEmployee) {
-                if (e.getName().equals(key)) {
-                    return e;
+            for (int i = 0; i < listEmployee.size(); i++) {
+                if (listEmployee.get(i).getName().equals(key)) {
+                    return i;
                 }
             }
         } else if (n == 2) {
-            for (Employee e : listEmployee) {
-                if (e.getId().equals(key)) {
-                    return e;
+            for (int i = 0; i < listEmployee.size(); i++) {
+                if (listEmployee.get(i).getId().equals(key)) {
+                    return i;
                 }
             }
         }
         System.out.println("Thông tin nhập vào không chính xác");
-        Employee employee = new Employee();
-        return employee;
+        return -1;
     }
 
 }
